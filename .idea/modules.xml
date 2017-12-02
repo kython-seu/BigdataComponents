@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BigdataComponents.iml" filepath="$PROJECT_DIR$/BigdataComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SparkLearn/SparkLearn.iml" filepath="$PROJECT_DIR$/SparkLearn/SparkLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spark-main/spark-main.iml" filepath="$PROJECT_DIR$/spark-main/spark-main.iml" />
+    </modules>
+  </component>
+</project>
