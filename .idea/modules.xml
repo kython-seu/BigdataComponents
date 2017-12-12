@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BigdataComponents.iml" filepath="$PROJECT_DIR$/BigdataComponents.iml" />
       <module fileurl="file://$PROJECT_DIR$/SparkLearn/SparkLearn.iml" filepath="$PROJECT_DIR$/SparkLearn/SparkLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crawlFilm/crawlFilm.iml" filepath="$PROJECT_DIR$/crawlFilm/crawlFilm.iml" />
       <module fileurl="file://$PROJECT_DIR$/spark-main/spark-main.iml" filepath="$PROJECT_DIR$/spark-main/spark-main.iml" />
     </modules>
   </component>

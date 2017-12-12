@@ -20,6 +20,7 @@ object SparkRDDApp {
 
     val conf: SparkConf = new SparkConf().setMaster("local").setAppName("SparkRdd test")
     val sc: SparkContext = new SparkContext(conf)
+    
 
     val text: RDD[Array[String]] = sc.textFile("/home/kason/data/sparkrdd/data").map(str => str.split(" ")).persist()
     val data1: RDD[(String,Int)] = text.map(res => (res(0), res(1).toInt))

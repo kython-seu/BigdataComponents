@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="crawlFilm" />
         <module name="spark-main" />
         <module name="SparkLearn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BigdataComponents" target="1.5" />
+      <module name="crawlFilm" target="1.5" />
       <module name="NettyApp" target="1.5" />
       <module name="spark-main" target="1.5" />
       <module name="SparkLearn" target="1.5" />
