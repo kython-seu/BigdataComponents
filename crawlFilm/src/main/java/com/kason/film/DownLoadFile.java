@@ -1,8 +1,5 @@
 package com.kason.film;
 
-import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -11,14 +8,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 
-/*
 import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
-*/
 
 public class DownLoadFile {//重命名
     /**
@@ -88,7 +83,7 @@ public class DownLoadFile {//重命名
    /* 4.处理 HTTP 响应内容 */
             // 根据网页 url 生成保存时的文件名
 
-            filePath = "d:\\spider\\"+url1 +".txt";
+            filePath = "/home/kason/data/film/"+url1 +".txt";
      /*+ getFileNameByUrl(url,
        getMethod.getResponseHeader("Content-Type")
          .getValue());*/
