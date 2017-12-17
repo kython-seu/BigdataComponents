@@ -110,7 +110,7 @@ public class HtmlParserTool {
         return links;
     }
 
-    public static byte[] paerserhtml(String url, LinkFilter filter) {
+    public static byte[] paerserhtml(String url) {
         //byte[] content = null;
         String context = null;
         Parser parser;
@@ -118,7 +118,6 @@ public class HtmlParserTool {
 
         try {
             parser = new Parser(url);
-            //parser.setEncoding("gb2312");
             parser.setEncoding(Testchartset.dectedCode(url));
             NodeFilter filter1 = new TagNameFilter("title");
             //NodeList nodes = parser.extractAllNodesThatMatch(filter1);
@@ -138,15 +137,9 @@ public class HtmlParserTool {
                         String t = m.replaceAll("");
                         context += t;
                         context += "\n";
-                    }/*else{
-            		   context += text;
-            	   }*/
-
-                    // if(textnode.getText()
-                    //context += textnode.toPlainTextString();
-                    //context += textnode.getText();
+                    }
                 }
-                //System.out.println(context);
+
             }
 	   /*NodeFilter filter2 = new TagNameFilter ("div");
 	   NodeFilter filter3 = new TagNameFilter ("img");
@@ -167,6 +160,7 @@ public class HtmlParserTool {
             // TODO 自动生成的 catch 块
             e.printStackTrace();
         } finally {
+
         }
         if (context == null) {
             context = "页面找不到了";
@@ -176,5 +170,44 @@ public class HtmlParserTool {
         }
     }
 
+
+    public static String parseHtml(String url) {
+        //byte[] content = null;
+        StringBuffer responseBody = new StringBuffer("");
+        Parser parser;
+        Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+
+        try {
+            parser = new Parser(url);
+            parser.setEncoding(Testchartset.dectedCode(url));
+            NodeFilter titleFilter = new TagNameFilter("title");
+
+            NodeFilter divFilter = new TagNameFilter("div");
+            OrFilter linkFilter = new OrFilter(titleFilter, divFilter);
+            NodeList nodes = parser.extractAllNodesThatMatch(linkFilter);
+            if (nodes != null) {
+                for (int i = 0; i < nodes.size(); i++) {
+                    Node textnode = nodes.elementAt(i);
+                    String line = textnode.getText();
+                    //System.out.println(line);
+                    String text = textnode.toPlainTextString();
+                    //System.out.println(text);
+                    if (line.contains("Zoom")) {
+                        //System.out.println(line.replaceAll(" ", "").replaceAll("\n", ""));
+                        Matcher m = p.matcher(text);
+                        String t = m.replaceAll("");
+                        responseBody.append(t);
+                        responseBody.append("\n");
+                    }
+                }
+            }
+        } catch (ParserException e) {
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        } finally {
+
+        }
+        return responseBody.toString();
+    }
 }
 

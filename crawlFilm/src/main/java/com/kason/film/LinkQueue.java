@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.Queue;
 
 public class LinkQueue {
+    //LinkQueue是公共资源
     // 已访问的 url 集合
     private static Set visitedUrl = new HashSet();
     // 待访问的 url 集合

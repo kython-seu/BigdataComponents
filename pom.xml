@@ -8,7 +8,6 @@
   <modules>
     <module>SparkLearn</module>
     <module>spark-main</module>
-      <module>NettyApp</module>
     <module>crawlFilm</module>
   </modules>
   <packaging>pom</packaging>
@@ -22,6 +21,8 @@
     <hadoop.version>2.7.4</hadoop.version>
     <spark.version>2.2.0</spark.version>
     <flink.version>1.3.0</flink.version>
+    <log4j>1.7.7</log4j>
+    <logback>1.1.7</logback>
   </properties>
 
   <dependencies>
@@ -125,6 +126,31 @@
         <version>1.6</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${log4j}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${logback}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-access</artifactId>
+        <version>${logback}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logback}</version>
+      </dependency>
+      <dependency>
+        <groupId>edu.uci.ics</groupId>
+        <artifactId>crawler4j</artifactId>
+        <version>4.3</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
  <!-- <build>

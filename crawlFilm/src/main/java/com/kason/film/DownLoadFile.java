@@ -14,8 +14,11 @@ import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class DownLoadFile {//重命名
+public class DownLoadFile {
+    private Logger logger = LoggerFactory.getLogger(DownLoadFile.class);
     /**
      * 根据 url 和网页类型生成需要保存的网页的文件名 去除掉 url 中非文件名字符
      */
