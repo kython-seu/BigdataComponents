@@ -1,0 +1,1 @@
+# BigdataComponentskafka.coordinator.GroupMetadataManager$OffsetsMessageFormatter
